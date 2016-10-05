@@ -23,7 +23,21 @@ const styles = StyleSheet.create({
   icon:{
     width:80,
     height:80
-  }
+  },
+  code: {
+    fontSize: 20,
+    textAlign: 'left',
+    fontFamily: 'SalesforceSans-Regular',
+    color:'white'
+  },
+  codeText: {
+    fontSize: 30,
+    textAlign: 'center',
+    margin: 10,
+    marginBottom:30,
+    fontFamily: 'SalesforceSans-Regular',
+    color:'white'
+  },
 });
 
 export default styles;

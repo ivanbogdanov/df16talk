@@ -20,6 +20,14 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  menuNavIcon: {
+    width:20,
+    height:20,
+    marginBottom:15,
+    marginRight:35,
+    marginTop:7,
+    marginLeft:20
+  }
 });
 
 export default styles;

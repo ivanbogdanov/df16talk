@@ -46,7 +46,10 @@ class Slide extends Component {
           ...but
         </Text>
         <Text style={styles.text}>
-          Most Native Apps Suck
+          many Native Apps
+        </Text>
+        <Text style={styles.text}>
+          are ...
         </Text>
         <TouchableOpacity onPress={this._handlePress.bind(this)} style={styles.iconContainer}>
           <Theme.Icons.Utility
@@ -69,7 +72,13 @@ class Slide extends Component {
         </View>
       </View>
       <View style={styles.container}>
-        <Text style={styles.text}>Devs make boring apps</Text>
+        <Text style={styles.text}>Many devs</Text>
+        <Text style={styles.text}>are affraid of</Text>
+          <Text style={styles.text}>mistakes</Text>
+            <Text style={styles.text}>and</Text>
+              <Text style={styles.text}>make</Text>
+                <Text style={styles.text}>boring apps</Text>
+
       </View>
     </Swiper>
     );

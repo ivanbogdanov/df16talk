@@ -65,7 +65,7 @@ class Slide extends Component {
       </View>
       <View style={styles.container}>
         <Text style={styles.text}>
-          separate codebase
+          separate codebases
         </Text>
       </View>
       <View style={styles.container}>
@@ -73,7 +73,6 @@ class Slide extends Component {
           dedicated teams
         </Text>
       </View>
-
       </Swiper>
     );
   }

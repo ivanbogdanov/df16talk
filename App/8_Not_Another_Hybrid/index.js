@@ -18,12 +18,23 @@ class App extends Component {
     this.state = {openPanelIndex: 0};
   }
 
+  _onMomentumScrollEnd (e, state, context) {
+    this.setState({openPanelIndex:context.state.index});
+  }
+
   _handlePress() {
     this.props.navigator.push({name:'Declarative_Components'});
   }
 
   render() {
     return (
+      <Swiper
+        dot={<View style={{backgroundColor:'rgba(100,100,100,.3)', width: 13, height: 13,borderRadius: 7, marginLeft: 7, marginRight: 7,}} />}
+        activeDot={<View style={{backgroundColor: '#777', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
+        paginationStyle={{ bottom: 80 }}
+        loop={true}
+        onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
+        >
       <View style={styles.container}>
         <Text style={styles.text}>
           React Native
@@ -46,6 +57,32 @@ class App extends Component {
           />
         </TouchableOpacity>
       </View>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          No WebView
+        </Text>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Javascript Thread
+        </Text>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Multiple Native Threads
+        </Text>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Async rendering
+        </Text>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Native Views
+        </Text>
+      </View>
+    </Swiper>
     );
   }
 }

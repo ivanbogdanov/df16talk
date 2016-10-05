@@ -42,7 +42,13 @@ const styles = StyleSheet.create({
   codeContainer:{
     marginTop:30,
     flex:0
-  }
+  },
+  strong: {
+    fontSize: 40,
+    textAlign: 'center',
+    margin: 10,
+    fontFamily: 'SalesforceSans-Bold',
+  },
 });
 
 export default styles;

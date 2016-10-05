@@ -52,11 +52,6 @@ class Slide extends Component {
       </View>
       <View style={styles.container}>
         <Text style={styles.light}>
-          Performance
-        </Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.light}>
           Performance!
         </Text>
       </View>

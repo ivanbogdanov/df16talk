@@ -17,6 +17,8 @@ import Efficient_Rerender from './10_Efficient_Rerender';
 import Native_Views from './11_Native_Views';
 import Reusable_Components from './12_Reusable_Components';
 
+import navbarMapper from './navbarMapper';
+
 import styles from './styles';
 
 class App extends Component {
@@ -29,6 +31,10 @@ class App extends Component {
   _handleMenuPress(routeName) {
     this.setState({isOpen:false});
     this.refs.nav.replace({name:routeName})
+  }
+
+  _handleMenuOpen() {
+    this.setState({isOpen:true});
   }
 
   _renderScene(route, navigator)  {
@@ -69,6 +75,7 @@ class App extends Component {
           ref='nav'
           initialRoute={{ title: 'My Initial Scene', index: 0 }}
           renderScene={this._renderScene}
+          navigationBar={<Navigator.NavigationBar routeMapper={navbarMapper({onMenuOpen:this._handleMenuOpen.bind(this)})} style={styles.navbar}/>}
         />
       </SideMenu>
     );

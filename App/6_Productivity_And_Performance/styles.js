@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 0,
     fontFamily: 'SalesforceSans-Bold',
-    color:'#7f93f9'
+    color:'white'
   },
   iconCont:{
     marginTop:60,
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     backgroundColor:'white'
   },
   icon:{
-    width:80,
-    height:80
+    width:60,
+    height:60
   },
   code: {
     fontSize: 14,
