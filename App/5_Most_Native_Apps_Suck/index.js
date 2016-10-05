@@ -74,11 +74,10 @@ class Slide extends Component {
       <View style={styles.container}>
         <Text style={styles.text}>Many devs</Text>
         <Text style={styles.text}>are affraid of</Text>
-          <Text style={styles.text}>mistakes</Text>
-            <Text style={styles.text}>and</Text>
-              <Text style={styles.text}>make</Text>
-                <Text style={styles.text}>boring apps</Text>
-
+        <Text style={styles.text}>mistakes</Text>
+        <Text style={styles.text}>and</Text>
+        <Text style={styles.text}>make</Text>
+        <Text style={styles.text}>boring apps</Text>
       </View>
     </Swiper>
     );

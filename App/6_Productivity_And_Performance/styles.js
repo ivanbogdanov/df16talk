@@ -48,11 +48,11 @@ const styles = StyleSheet.create({
     backgroundColor:'white'
   },
   icon:{
-    width:60,
-    height:60
+    width:50,
+    height:50
   },
   code: {
-    fontSize: 14,
+    fontSize: 20,
     textAlign: 'left',
     fontFamily: 'SalesforceSans-Regular',
     color:'white'
