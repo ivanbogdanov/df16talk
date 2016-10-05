@@ -25,7 +25,7 @@ class Slide extends Component {
   }
 
   _handlePress() {
-    this.props.navigator.push({name:'Efficient_Rerender'});
+    this.props.navigator.push({name:this.props.next});
   }
 
   _renderSampleCode () {

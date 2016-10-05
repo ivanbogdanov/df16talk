@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   _handlePress() {
-    this.props.navigator.push({name:'Declarative_Components'});
+    this.props.navigator.push({name:this.props.next});
   }
 
   render() {

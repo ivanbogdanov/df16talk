@@ -11,9 +11,6 @@ import Theme from 'react.force.base.theme';
 
 import styles from './styles';
 
-import reactSampleCode from './reactSampleCode';
-
-
 class Slide extends Component {
 
   constructor(props) {
@@ -21,16 +18,12 @@ class Slide extends Component {
     this.state = {openPanelIndex: 0};
   }
 
-  _handlePress() {
-    this.props.navigator.push({name:'Not_Another_Hybrid'});
-  }
-
   _onMomentumScrollEnd (e, state, context) {
     this.setState({openPanelIndex:context.state.index});
   }
 
-  _renderSampleCode () {
-    return reactSampleCode.map((line,index)=><Text key={'line_'+index} style={styles.code}>{line}</Text>)
+  _handlePress() {
+    this.props.navigator.push({name:this.props.next});
   }
 
   render() {
@@ -43,39 +36,28 @@ class Slide extends Component {
         onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
         >
       <View style={styles.container}>
-        <View style={styles.titleCont}>
-          <Text style={styles.title}>
-            React Native
-          </Text>
-        </View>
         <Text style={styles.text}>
-          Productivity
-        </Text>
-        <Text style={styles.textAnd}>
-          &
-        </Text>
-        <Text style={styles.text}>
-          Performance
+          Efficient Rendering
         </Text>
         <TouchableOpacity
           style={styles.iconCont}
           onPress={this._handlePress.bind(this)}>
-          <Theme.Icons.Custom
-            name="custom80"
+          <Theme.Icons.Utility
+            name='replace'
+            iconColor='#ffffff'
             style={styles.icon}
           />
         </TouchableOpacity>
-
       </View>
       <View style={styles.container}>
-        <Text style={styles.codeText}>React: fetch sample code</Text>
-        <View style={styles.codeContainer}>
-          { this._renderSampleCode() }
-        </View>
+        <Text style={styles.text}>
+          Virtual DOM
+        </Text>
       </View>
       <View style={styles.container}>
-        <Text style={styles.text}>iOS</Text>
-        <Text style={styles.text}>Android</Text>
+        <Text style={styles.text}>
+          DOM Diffs
+        </Text>
       </View>
     </Swiper>
     );

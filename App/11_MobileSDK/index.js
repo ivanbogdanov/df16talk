@@ -5,9 +5,9 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import Theme from 'react.force.base.theme';
-
 import Swiper from 'react-native-swiper';
+
+import Theme from 'react.force.base.theme';
 
 import styles from './styles';
 
@@ -23,7 +23,7 @@ class Slide extends Component {
   }
 
   _handlePress() {
-    this.props.navigator.push({name:'Reusable_Components'});
+    this.props.navigator.push({name:this.props.next});
   }
 
   render() {
@@ -35,36 +35,70 @@ class Slide extends Component {
         loop={true}
         onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
         >
+
       <View style={styles.container}>
         <Text style={styles.text}>
-          Native Views
+          React Native
+        </Text>
+        <Text style={styles.text}>
+          with
+        </Text>
+        <Text style={styles.text}>
+          Mobile SDK
         </Text>
         <TouchableOpacity
           style={styles.iconCont}
           onPress={this._handlePress.bind(this)}>
           <Theme.Icons.Utility
-            name='touch_action'
+            name='puzzle'
             iconColor='#ffffff'
             style={styles.icon}
           />
         </TouchableOpacity>
       </View>
+
       <View style={styles.container}>
         <Text style={styles.text}>
-          Native
+          oauth
         </Text>
         <Text style={styles.text}>
-          Touch Events
+          net
+        </Text>
+        <Text style={styles.text}>
+          smartstore
+        </Text>
+        <Text style={styles.text}>
+          smartsync
         </Text>
       </View>
+
       <View style={styles.container}>
         <Text style={styles.text}>
-          Native
+          forceios
         </Text>
         <Text style={styles.text}>
-          Lists, Scrollers
+          forcedroid
         </Text>
       </View>
+
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          datacontainer
+        </Text>
+        <Text style={styles.text}>
+          theme
+        </Text>
+      </View>
+
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Dreamhouse
+        </Text>
+        <Text style={styles.text}>
+          App
+        </Text>
+      </View>
+
     </Swiper>
     );
   }

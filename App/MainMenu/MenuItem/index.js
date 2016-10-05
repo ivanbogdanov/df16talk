@@ -14,7 +14,7 @@ class MainMenu extends Component {
 
   _handlePress() {
     if(this.props.onPress){
-        this.props.onPress(this.props.name);
+        this.props.onPress(this.props.name, this.props.next);
     }
   }
 

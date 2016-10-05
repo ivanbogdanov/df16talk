@@ -23,7 +23,7 @@ class Slide extends Component {
   }
 
   _handlePress() {
-    this.props.navigator.push({name:'Native_Views'});
+    this.props.navigator.push({name:this.props.next});
   }
 
   render() {
@@ -36,27 +36,23 @@ class Slide extends Component {
         onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
         >
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Efficient Rendering
+        <Text style={styles.light}>
+          Some
         </Text>
-        <TouchableOpacity
-          style={styles.iconCont}
-          onPress={this._handlePress.bind(this)}>
+        <Text style={styles.text}>
+          Native Apps are <Text style={styles.strong}>GREAT!</Text>
+        </Text>
+        <TouchableOpacity onPress={this._handlePress.bind(this)}>
           <Theme.Icons.Utility
-            name='replace'
             iconColor='#ffffff'
+            name="like"
             style={styles.icon}
           />
         </TouchableOpacity>
       </View>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Virtual DOM
-        </Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          DOM Diffs 
+        <Text style={styles.light}>
+          Performance!
         </Text>
       </View>
     </Swiper>

@@ -21,7 +21,7 @@ class Slide extends Component {
   }
 
   _handlePress() {
-    this.props.navigator.push({name:'Mobile_Is_Expensive'});
+    this.props.navigator.push({name:this.props.next});
   }
 
   _onMomentumScrollEnd (e, state, context) {

@@ -11,6 +11,9 @@ import Theme from 'react.force.base.theme';
 
 import styles from './styles';
 
+import reactSampleCode from './reactSampleCode';
+
+
 class Slide extends Component {
 
   constructor(props) {
@@ -18,12 +21,16 @@ class Slide extends Component {
     this.state = {openPanelIndex: 0};
   }
 
+  _handlePress() {
+    this.props.navigator.push({name:this.props.next});
+  }
+
   _onMomentumScrollEnd (e, state, context) {
     this.setState({openPanelIndex:context.state.index});
   }
 
-  _handlePress() {
-    this.props.navigator.push({name:'Why_React_Native'});
+  _renderSampleCode () {
+    return reactSampleCode.map((line,index)=><Text key={'line_'+index} style={styles.code}>{line}</Text>)
   }
 
   render() {
@@ -36,46 +43,39 @@ class Slide extends Component {
         onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
         >
       <View style={styles.container}>
+        <View style={styles.titleCont}>
+          <Text style={styles.title}>
+            React Native
+          </Text>
+        </View>
         <Text style={styles.text}>
-          Reusable Components
+          Productivity
+        </Text>
+        <Text style={styles.textAnd}>
+          &
+        </Text>
+        <Text style={styles.text}>
+          Performance
         </Text>
         <TouchableOpacity
           style={styles.iconCont}
           onPress={this._handlePress.bind(this)}>
-          <Theme.Icons.Utility
-            name='puzzle'
-            iconColor='#ffffff'
+          <Theme.Icons.Custom
+            name="custom80"
             style={styles.icon}
           />
         </TouchableOpacity>
+
       </View>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Clean codebase
-        </Text>
+        <Text style={styles.codeText}>React: fetch sample code</Text>
+        <View style={styles.codeContainer}>
+          { this._renderSampleCode() }
+        </View>
       </View>
       <View style={styles.container}>
-        <Text style={styles.text}>
-          Cross-platform components
-        </Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          Cross-project components
-        </Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          NPM
-        </Text>
-        <Text style={styles.text}>
-          distribution
-        </Text>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          Easy to test
-        </Text>
+        <Text style={styles.text}>iOS</Text>
+        <Text style={styles.text}>Android</Text>
       </View>
     </Swiper>
     );

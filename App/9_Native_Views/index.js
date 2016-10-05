@@ -5,9 +5,9 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import Swiper from 'react-native-swiper';
-
 import Theme from 'react.force.base.theme';
+
+import Swiper from 'react-native-swiper';
 
 import styles from './styles';
 
@@ -23,7 +23,7 @@ class Slide extends Component {
   }
 
   _handlePress() {
-    this.props.navigator.push({name:'Most_Native_Apps_Suck'});
+    this.props.navigator.push({name:this.props.next});
   }
 
   render() {
@@ -36,23 +36,33 @@ class Slide extends Component {
         onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
         >
       <View style={styles.container}>
-        <Text style={styles.light}>
-          Some
-        </Text>
         <Text style={styles.text}>
-          Native Apps are <Text style={styles.strong}>GREAT!</Text>
+          Native Views
         </Text>
-        <TouchableOpacity onPress={this._handlePress.bind(this)}>
+        <TouchableOpacity
+          style={styles.iconCont}
+          onPress={this._handlePress.bind(this)}>
           <Theme.Icons.Utility
+            name='touch_action'
             iconColor='#ffffff'
-            name="like"
             style={styles.icon}
           />
         </TouchableOpacity>
       </View>
       <View style={styles.container}>
-        <Text style={styles.light}>
-          Performance!
+        <Text style={styles.text}>
+          Native
+        </Text>
+        <Text style={styles.text}>
+          Touch Events
+        </Text>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          Native
+        </Text>
+        <Text style={styles.text}>
+          Lists, Scrollers
         </Text>
       </View>
     </Swiper>
