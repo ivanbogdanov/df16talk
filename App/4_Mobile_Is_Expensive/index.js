@@ -8,6 +8,8 @@ import {
 import Swiper from 'react-native-swiper';
 import Theme from 'react.force.base.theme';
 
+import { SlideInFadeIn } from '../Animations';
+
 import styles from './styles';
 
 class Slide extends Component {
@@ -44,13 +46,14 @@ class Slide extends Component {
           <Text style={styles.text}>
             is expensive
           </Text>
-        <TouchableOpacity onPress={this._handlePress.bind(this)} style={styles.iconContainer}>
-          <Theme.Icons.Utility
-            iconColor='#ffffff'
-            name='moneybag'
-          />
-        </TouchableOpacity>
-
+          <SlideInFadeIn>
+            <TouchableOpacity onPress={this._handlePress.bind(this)} style={styles.iconContainer}>
+              <Theme.Icons.Utility
+                iconColor='#ffffff'
+                name='moneybag'
+              />
+            </TouchableOpacity>
+          </SlideInFadeIn>
       </View>
       <View style={styles.container}>
         <Text style={styles.text}>

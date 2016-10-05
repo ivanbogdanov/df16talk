@@ -5,6 +5,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import { SlideInFadeIn } from '../Animations';
+
 import styles from './styles';
 
 class Slide extends Component {
@@ -16,11 +18,13 @@ class Slide extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={this._handlePress.bind(this)}>
-          <Text style={styles.welcome}>
-            Why React Native?
-          </Text>
-        </TouchableOpacity>
+        <SlideInFadeIn>
+          <TouchableOpacity onPress={this._handlePress.bind(this)}>
+            <Text style={styles.welcome}>
+              Why React Native?
+            </Text>
+          </TouchableOpacity>
+        </SlideInFadeIn>
       </View>
     );
   }

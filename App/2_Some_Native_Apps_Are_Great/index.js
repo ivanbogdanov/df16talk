@@ -6,8 +6,9 @@ import {
 } from 'react-native';
 
 import Swiper from 'react-native-swiper';
-
 import Theme from 'react.force.base.theme';
+
+import { SlideInFadeIn } from '../Animations';
 
 import styles from './styles';
 
@@ -42,13 +43,15 @@ class Slide extends Component {
         <Text style={styles.text}>
           Native Apps are <Text style={styles.strong}>GREAT!</Text>
         </Text>
-        <TouchableOpacity onPress={this._handlePress.bind(this)}>
-          <Theme.Icons.Utility
-            iconColor='#ffffff'
-            name="like"
-            style={styles.icon}
-          />
-        </TouchableOpacity>
+        <SlideInFadeIn>
+          <TouchableOpacity onPress={this._handlePress.bind(this)}>            
+            <Theme.Icons.Utility
+              iconColor='#ffffff'
+              name="like"
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+        </SlideInFadeIn>
       </View>
       <View style={styles.container}>
         <Text style={styles.light}>
