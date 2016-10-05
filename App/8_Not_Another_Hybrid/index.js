@@ -5,11 +5,18 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import Swiper from 'react-native-swiper';
+
 import Theme from 'react.force.base.theme';
 
 import styles from './styles';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {openPanelIndex: 0};
+  }
 
   _handlePress() {
     this.props.navigator.push({name:'Declarative_Components'});

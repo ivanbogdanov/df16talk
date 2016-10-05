@@ -10,7 +10,7 @@ import styles from './styles';
 class Slide extends Component {
 
   _handlePress() {
-    this.props.navigator.push({name:'Mobile_Is_Expensive'});
+    this.props.navigator.push({name:'Some_Native_Apps_Are_Great'});
   }
 
   render() {

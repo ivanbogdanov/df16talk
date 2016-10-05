@@ -19,7 +19,7 @@ class Slide extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
-          Efficient Rerender
+          Efficient Rendering
         </Text>
         <TouchableOpacity
           style={styles.iconCont}

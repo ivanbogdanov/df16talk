@@ -17,10 +17,31 @@ const styles = StyleSheet.create({
     fontFamily: 'SalesforceSans-Light',
     color:'white'
   },
+  code: {
+    fontSize: 14,
+    textAlign: 'left',
+    fontFamily: 'SalesforceSans-Regular',
+    color:'white'
+  },
+  codeText: {
+    fontSize: 30,
+    textAlign: 'center',
+    margin: 10,
+    fontFamily: 'SalesforceSans-Light',
+    color:'white'
+  },
+  iconContainer:{
+    marginTop:30,
+    flex:0
+  },
   icon:{
     width:80,
     height:80,
     transform:[{rotate: '180deg'}]
+  },
+  codeContainer:{
+    marginTop:30,
+    flex:0
   }
 });
 

@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
     margin: 10,
     fontFamily: 'SalesforceSans-Light',
     color:'white'
+  },
+  iconContainer: {
+    marginTop:50
   }
 });
 

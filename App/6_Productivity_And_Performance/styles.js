@@ -10,23 +10,61 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ff9a3c',
   },
+  titleCont: {
+    backgroundColor: 'transparent',
+    padding:3,
+    paddingLeft:16,
+    paddingRight:16,
+    borderRadius:8,
+    borderColor:'transparent',
+    borderWidth:2,
+    marginBottom: 40,
+  },
+  title: {
+    fontSize: 28,
+    textAlign: 'center',
+    fontFamily: 'SalesforceSans-Regular',
+    color:'white',
+    backgroundColor: 'transparent',
+  },
   text: {
-    fontSize: 40,
+    fontSize: 46,
     textAlign: 'center',
     margin: 10,
     fontFamily: 'SalesforceSans-Regular',
     color:'white'
   },
+  textAnd: {
+    fontSize: 26,
+    textAlign: 'center',
+    margin: 0,
+    fontFamily: 'SalesforceSans-Bold',
+    color:'#7f93f9'
+  },
   iconCont:{
-    marginTop:40,
-    backgroundColor: '#ffffff',
+    marginTop:60,
     padding:4,
-    borderRadius:8
+    borderRadius:8,
+    backgroundColor:'white'
   },
   icon:{
     width:80,
     height:80
-  }
+  },
+  code: {
+    fontSize: 14,
+    textAlign: 'left',
+    fontFamily: 'SalesforceSans-Regular',
+    color:'white'
+  },
+  codeText: {
+    fontSize: 30,
+    textAlign: 'center',
+    margin: 10,
+    marginBottom:30,
+    fontFamily: 'SalesforceSans-Regular',
+    color:'white'
+  },
 });
 
 export default styles;
