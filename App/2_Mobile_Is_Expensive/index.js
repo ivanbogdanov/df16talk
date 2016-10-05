@@ -9,7 +9,7 @@ import Theme from 'react.force.base.theme';
 
 import styles from './styles';
 
-class App extends Component {
+class Slide extends Component {
 
   _handlePress() {
     this.props.navigator.push({name:'Almost_Done'});
@@ -32,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Slide

@@ -12,7 +12,7 @@ import styles from './styles';
 class App extends Component {
 
   _handlePress() {
-    this.props.navigator.push({name:'Some_Native_Apps_Are_Great'});
+    this.props.navigator.push({name:'Declarative_Components'});
   }
 
   render() {

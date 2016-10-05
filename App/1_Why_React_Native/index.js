@@ -7,7 +7,7 @@ import {
 
 import styles from './styles';
 
-class App extends Component {
+class Slide extends Component {
 
   _handlePress() {
     this.props.navigator.push({name:'Mobile_Is_Expensive'});
@@ -26,4 +26,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Slide
