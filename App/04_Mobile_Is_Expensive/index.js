@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import { SwipePage } from '../Common';
+import {
+  Text,
+  View,
+  TouchableOpacity
+} from 'react-native';
+
+import Swiper from 'react-native-swiper';
 import Theme from 'react.force.base.theme';
+
+import { SwipePage } from '../Common';
+
+
 import { SlideUpFadeIn } from '../Animations';
+
 import styles from './styles';
 
 class Slide extends Component {
@@ -10,59 +20,46 @@ class Slide extends Component {
   render() {
     return (
       <SwipePage route={this.props.route} onNext={this.props.onNext} nextLabel={this.props.nextLabel}>
-
+        <View style={styles.container}>
+            <Text style={styles.text}>
+              Mobile
+            </Text>
+            <Text style={styles.text}>
+              development
+            </Text>
+            <Text style={styles.text}>
+              is expensive
+            </Text>
+            <SlideUpFadeIn>
+              <TouchableOpacity style={styles.iconContainer}>
+                <Theme.Icons.Utility
+                  iconColor='#ffffff'
+                  name='moneybag'
+                />
+              </TouchableOpacity>
+            </SlideUpFadeIn>
+        </View>
         <View style={styles.container}>
           <Text style={styles.text}>
-            Reusable Components
+            iOS
           </Text>
-          <SlideUpFadeIn style={styles.iconCont}>
-            <Theme.Icons.Utility
-              name='puzzle'
-              iconColor='#ffffff'
-              style={styles.icon}
-            />
-          </SlideUpFadeIn>
+          <Text style={styles.text}>
+            Android
+          </Text>
+          <Text style={styles.text}>
+            Web
+          </Text>
         </View>
-
         <View style={styles.container}>
           <Text style={styles.text}>
-            Clean codebase
+            separate codebases
           </Text>
         </View>
-
         <View style={styles.container}>
           <Text style={styles.text}>
-            Cross-platform components
+            dedicated teams
           </Text>
         </View>
-
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            Cross-project components
-          </Text>
-        </View>
-
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            NPM
-          </Text>
-          <Text style={styles.text}>
-            distribution
-          </Text>
-        </View>
-
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            Open-source community
-          </Text>
-        </View>
-
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            Easy to test
-          </Text>
-        </View>
-
       </SwipePage>
     );
   }

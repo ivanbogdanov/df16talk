@@ -21,7 +21,7 @@ class Slide extends Component {
 
   render() {
     return (
-      <SwipePage route={this.props.route} onNext={this.props.onNext} >
+      <SwipePage route={this.props.route} onNext={this.props.onNext} nextLabel={this.props.nextLabel}>
       <View style={styles.container}>
         <Text style={styles.light}>
           Some

@@ -48,7 +48,10 @@ class SwipePage extends Component {
           >
           { this.props.children }
         </Swiper>
-        <NextChapterButton show={this.state.displayNextButton} onPress={this._handlePress.bind(this)}/>
+        <NextChapterButton
+          label={this.props.nextLabel}
+          show={this.state.displayNextButton}
+          onPress={this._handlePress.bind(this)}/>
       </View>
     );
   }

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { SwipePage } from '../Common';
 import Theme from 'react.force.base.theme';
+import { SwipePage } from '../Common';
 import { SlideUpFadeIn } from '../Animations';
+
 import styles from './styles';
 
 class Slide extends Component {
@@ -10,59 +11,37 @@ class Slide extends Component {
   render() {
     return (
       <SwipePage route={this.props.route} onNext={this.props.onNext} nextLabel={this.props.nextLabel}>
-
         <View style={styles.container}>
           <Text style={styles.text}>
-            Reusable Components
+            Native Views
           </Text>
           <SlideUpFadeIn style={styles.iconCont}>
             <Theme.Icons.Utility
-              name='puzzle'
+              name='touch_action'
               iconColor='#ffffff'
               style={styles.icon}
             />
           </SlideUpFadeIn>
         </View>
-
         <View style={styles.container}>
           <Text style={styles.text}>
-            Clean codebase
+            Native
+          </Text>
+          <Text style={styles.text}>
+            Touch Events
           </Text>
         </View>
-
         <View style={styles.container}>
           <Text style={styles.text}>
-            Cross-platform components
-          </Text>
-        </View>
-
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            Cross-project components
-          </Text>
-        </View>
-
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            NPM
+            Native
           </Text>
           <Text style={styles.text}>
-            distribution
+            Lists, Scrolls
           </Text>
-        </View>
-
-        <View style={styles.container}>
           <Text style={styles.text}>
-            Open-source community
+            Navigation
           </Text>
         </View>
-
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            Easy to test
-          </Text>
-        </View>
-
       </SwipePage>
     );
   }

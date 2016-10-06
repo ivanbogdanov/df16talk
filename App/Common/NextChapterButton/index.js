@@ -18,10 +18,10 @@ class NextChapterButton extends Component {
       return null;
     }
     return (
-      <SlideRightFadeIn delay={200} style={styles.nextButtonContainer}>
+      <SlideRightFadeIn delay={this.props.delay} style={styles.nextButtonContainer}>
       <TouchableOpacity onPress={this.props.onPress} style={styles.container}>
         <Text style={styles.text}>
-          Next Chapter
+          { this.props.label }
         </Text>
         <Theme.Icons.Utility
           name="right"
@@ -34,7 +34,9 @@ class NextChapterButton extends Component {
 }
 
 NextChapterButton.defaultProps = {
-  show: true
+  label: 'Next',
+  show: true,
+  delay: 200
 };
 
 export default NextChapterButton
