@@ -3,9 +3,10 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#1589ee',
+    paddingTop:60,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#1589ee',
   },
   welcome: {
     fontSize: 40,
@@ -13,6 +14,11 @@ const styles = StyleSheet.create({
     margin: 10,
     fontFamily: 'SalesforceSans-Light',
     color:'white'
+  },
+  nextButtonContainer: {
+    flex:0,
+    justifyContent: 'center',
+    alignItems: 'flex-end'
   }
 });
 

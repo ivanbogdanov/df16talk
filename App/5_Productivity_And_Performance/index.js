@@ -8,7 +8,9 @@ import {
 import Swiper from 'react-native-swiper';
 import Theme from 'react.force.base.theme';
 
-import { SlideInFadeIn } from '../Animations';
+import { SwipePage } from '../Common';
+
+import { SlideRightFadeIn } from '../Animations';
 
 import styles from './styles';
 
@@ -17,70 +19,46 @@ import reactSampleCode from './reactSampleCode';
 
 class Slide extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {openPanelIndex: 0};
-  }
-
-  _handlePress() {
-    this.props.navigator.push({name:this.props.next});
-  }
-
-  _onMomentumScrollEnd (e, state, context) {
-    this.setState({openPanelIndex:context.state.index});
-  }
-
   _renderSampleCode () {
     return reactSampleCode.map((line,index)=><Text key={'line_'+index} style={styles.code}>{line}</Text>)
   }
 
   render() {
     return (
-      <Swiper
-        dot={<View style={{backgroundColor:'rgba(255,255,255,.3)', width: 13, height: 13,borderRadius: 7, marginLeft: 7, marginRight: 7,}} />}
-        activeDot={<View style={{backgroundColor: '#fff', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
-        paginationStyle={{ bottom: 80 }}
-        loop={true}
-        onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
-        >
-      <View style={styles.container}>
-        <View style={styles.titleCont}>
-          <Text style={styles.title}>
-            React Native
+      <SwipePage route={this.props.route} onNext={this.props.onNext} >
+        <View style={styles.container}>
+          <View style={styles.titleCont}>
+            <Text style={styles.title}>
+              React Native
+            </Text>
+          </View>
+          <Text style={styles.text}>
+            Productivity
           </Text>
+          <Text style={styles.textAnd}>
+            &
+          </Text>
+          <Text style={styles.text}>
+            Performance
+          </Text>
+          <SlideRightFadeIn style={styles.iconCont}>
+              <Theme.Icons.Custom
+                name="custom80"
+                style={styles.icon}
+              />
+          </SlideRightFadeIn>
         </View>
-        <Text style={styles.text}>
-          Productivity
-        </Text>
-        <Text style={styles.textAnd}>
-          &
-        </Text>
-        <Text style={styles.text}>
-          Performance
-        </Text>
-        <SlideInFadeIn>
-          <TouchableOpacity
-            style={styles.iconCont}
-            onPress={this._handlePress.bind(this)}>
-            <Theme.Icons.Custom
-              name="custom80"
-              style={styles.icon}
-            />
-          </TouchableOpacity>
-        </SlideInFadeIn>
-
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.codeText}>React: fetch sample code</Text>
-        <View style={styles.codeContainer}>
-          { this._renderSampleCode() }
+        <View style={styles.container}>
+          <Text style={styles.codeText}>React: fetch sample code</Text>
+          <View style={styles.codeContainer}>
+            { this._renderSampleCode() }
+          </View>
         </View>
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.text}>iOS</Text>
-        <Text style={styles.text}>Android</Text>
-      </View>
-    </Swiper>
+        <View style={styles.container}>
+          <Text style={styles.text}>iOS</Text>
+          <Text style={styles.text}>Android</Text>
+        </View>
+      </SwipePage>
     );
   }
 }

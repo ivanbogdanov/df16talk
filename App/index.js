@@ -16,7 +16,7 @@ import Native_Views from './9_Native_Views';
 import Reusable_Components from './10_Reusable_Components';
 import MobileSDK from './11_MobileSDK';
 
-import navbarMapper from './navbarMapper';
+import { NavigationBarMapper } from './NavBar';
 
 import routes from './routes';
 
@@ -34,9 +34,22 @@ class App extends Component {
     this.refs.nav.push({name:routeName, next:nextRouteName})
   }
 
+  _getNextRoute(routeName) {
+    let index = routes.findIndex(route => route.name === routeName);
+    let nextIndex = index+1;
+    if(nextIndex >= routes.length){
+      nextIndex = 0;
+    }
+    return routes[nextIndex];
+  }
+
   _handleNext(route) {
+    console.log('_handleNext: ',route);
     this.setState({isOpen:false});
-    this.refs.nav.push({name:route.next})
+    let nextRoute = (route && route.name)?this._getNextRoute(route.name):routes[0];
+    console.log('nextRoute: ',nextRoute);
+
+    this.refs.nav.replace(nextRoute);
   }
 
   _handleMenuOpen() {
@@ -46,27 +59,27 @@ class App extends Component {
   _renderScene(route, navigator)  {
     switch (route.name) {
       case 'Mobile_Is_Expensive':
-        return <Mobile_Is_Expensive navigator={navigator} next='Some_Native_Apps_Are_Great' />
+        return <Mobile_Is_Expensive navigator={navigator} route={route} onNext={this._handleNext.bind(this)} />
       case 'Some_Native_Apps_Are_Great':
-        return <Some_Native_Apps_Are_Great navigator={navigator} next='Most_Native_Apps_Suck'/>
+        return <Some_Native_Apps_Are_Great navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       case 'Most_Native_Apps_Suck':
-        return <Most_Native_Apps_Suck navigator={navigator} next='Productivity_And_Performance'/>
+        return <Most_Native_Apps_Suck navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       case 'Productivity_And_Performance':
-        return <Productivity_And_Performance navigator={navigator} next='Not_Another_Hybrid'/>
+        return <Productivity_And_Performance navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       case 'Not_Another_Hybrid':
-        return <Not_Another_Hybrid navigator={navigator} next='Declarative_Components'/>
+        return <Not_Another_Hybrid navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       case 'Declarative_Components':
-        return <Declarative_Components navigator={navigator} next='Efficient_Rerender'/>
+        return <Declarative_Components navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       case 'Efficient_Rerender':
-        return <Efficient_Rerender navigator={navigator} next='Native_Views'/>
+        return <Efficient_Rerender navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       case 'Native_Views':
-        return <Native_Views navigator={navigator} next='Reusable_Components'/>
+        return <Native_Views navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       case 'Reusable_Components':
-        return <Reusable_Components navigator={navigator} next='MobileSDK'/>
+        return <Reusable_Components navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       case 'MobileSDK':
-        return <MobileSDK navigator={navigator} next='Why_React_Native'/>
+        return <MobileSDK navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
       default:
-        return <Why_React_Native navigator={navigator} next='Some_Native_Apps_Are_Great'/>
+        return <Why_React_Native navigator={navigator} route={route} onNext={this._handleNext.bind(this)}/>
     }
   }
 
@@ -78,8 +91,8 @@ class App extends Component {
         <Navigator
           ref='nav'
           initialRoute={{name:'Why_React_Native'}}
-          renderScene={this._renderScene}
-          navigationBar={<Navigator.NavigationBar routeMapper={navbarMapper({onMenuOpen:this._handleMenuOpen.bind(this),onNext:this._handleNext.bind(this)})} style={styles.navbar}/>}
+          renderScene={this._renderScene.bind(this)}
+          navigationBar={<Navigator.NavigationBar routeMapper={NavigationBarMapper({onMenuOpen:this._handleMenuOpen.bind(this),onNext:this._handleNext.bind(this),showNext:true})} style={styles.navbar}/>}
         />
       </SideMenu>
     );

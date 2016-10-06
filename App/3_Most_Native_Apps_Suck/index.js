@@ -8,26 +8,15 @@ import {
 import Swiper from 'react-native-swiper';
 import Theme from 'react.force.base.theme';
 
-import { SlideInFadeIn } from '../Animations';
+import { SlideUpFadeIn } from '../Animations';
 
 import swiftSampleCode from './swiftSampleCode';
 
 import styles from './styles';
 
+import { SwipePage } from '../Common';
+
 class Slide extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {openPanelIndex: 0};
-  }
-
-  _handlePress() {
-    this.props.navigator.push({name:this.props.next});
-  }
-
-  _onMomentumScrollEnd (e, state, context) {
-    this.setState({openPanelIndex:context.state.index});
-  }
 
   _renderSwiftCode () {
     return swiftSampleCode.map((line,index)=><Text key={'line_'+index} style={styles.code}>{line}</Text>)
@@ -35,13 +24,7 @@ class Slide extends Component {
 
   render() {
     return (
-    <Swiper
-      dot={<View style={{backgroundColor:'rgba(255,255,255,.3)', width: 13, height: 13,borderRadius: 7, marginLeft: 7, marginRight: 7,}} />}
-      activeDot={<View style={{backgroundColor: '#fff', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
-      paginationStyle={{ bottom: 80 }}
-      loop={true}
-      onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
-      >
+    <SwipePage route={this.props.route} onNext={this.props.onNext} >
       <View style={styles.container}>
         <Text style={styles.text}>
           ...but
@@ -52,15 +35,15 @@ class Slide extends Component {
         <Text style={styles.text}>
           are ...
         </Text>
-        <SlideInFadeIn>
-          <TouchableOpacity onPress={this._handlePress.bind(this)} style={styles.iconContainer}>
+        <SlideUpFadeIn>
+          <TouchableOpacity style={styles.iconContainer}>
             <Theme.Icons.Utility
               iconColor='#ffffff'
               name="like"
               style={styles.icon}
             />
           </TouchableOpacity>
-        </SlideInFadeIn>
+        </SlideUpFadeIn>
       </View>
       <View style={styles.container}>
         <Text style={styles.text}>Why?</Text>
@@ -82,7 +65,7 @@ class Slide extends Component {
         <Text style={styles.text}>make</Text>
         <Text style={styles.text}>boring apps</Text>
       </View>
-    </Swiper>
+    </SwipePage>
     );
   }
 }

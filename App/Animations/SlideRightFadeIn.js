@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 
-class SlideInFadeIn extends Component {
+class SlideRightFadeIn extends Component {
 
    constructor(props) {
      super(props);
@@ -28,7 +28,7 @@ class SlideInFadeIn extends Component {
     const spring = Animated.spring;
 
      Animated.sequence([
-      delay(1200),
+      delay(this.props.delay),
       spring(
         this.state.fadeAnim,
         {
@@ -43,9 +43,9 @@ class SlideInFadeIn extends Component {
     const animatedStyle = {
      opacity: this.state.fadeAnim, // Binds directly
      transform: [{
-       translateY: this.state.fadeAnim.interpolate({
+       translateX: this.state.fadeAnim.interpolate({
          inputRange: [0, 1],
-         outputRange: [150, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+         outputRange: [-150, 0]  // 0 : 150, 0.5 : 75, 1 : 0
        }),
      }],
     };
@@ -63,4 +63,8 @@ class SlideInFadeIn extends Component {
    }
  };
 
-export default SlideInFadeIn
+SlideRightFadeIn.defaultProps = {
+  delay: 200
+};
+
+export default SlideRightFadeIn

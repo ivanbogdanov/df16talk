@@ -5,26 +5,34 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import { SlideInFadeIn } from '../Animations';
+import { SlideRightFadeIn,SlideUpFadeIn } from '../Animations';
+
+import { NextChapterButton } from '../Common';
 
 import styles from './styles';
 
 class Slide extends Component {
 
   _handlePress() {
-    this.props.navigator.push({name:this.props.next});
+    console.log('NEXT!: ',this.props.route)
+    if(this.props.onNext){
+      console.log('NEXT!: ',this.props.route)
+
+      this.props.onNext(this.props.route);
+    }
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <SlideInFadeIn>
+        <NextChapterButton onPress={this._handlePress.bind(this)} />
+        <SlideUpFadeIn delay={1000} style={styles.infoContainer}>
           <TouchableOpacity onPress={this._handlePress.bind(this)}>
             <Text style={styles.welcome}>
               Why React Native?
             </Text>
           </TouchableOpacity>
-        </SlideInFadeIn>
+        </SlideUpFadeIn>
       </View>
     );
   }

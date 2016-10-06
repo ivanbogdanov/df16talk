@@ -1,5 +1,7 @@
-import SlideInFadeIn from './SlideInFadeIn';
+import SlideUpFadeIn from './SlideUpFadeIn';
+import SlideRightFadeIn from './SlideRightFadeIn';
 
 module.exports = {
-  SlideInFadeIn: SlideInFadeIn
+  SlideUpFadeIn: SlideUpFadeIn,
+  SlideRightFadeIn:SlideRightFadeIn
 }
