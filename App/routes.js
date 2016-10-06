@@ -9,7 +9,8 @@ const items = [
   },
   {
     name:'Most_Native_Apps_Suck',
-    label:'Most Native Apps Suck'
+    label:'Most Native Apps Suck',
+    preview:'...but'
   },
   {
     name:'Mobile_Is_Expensive',
@@ -17,23 +18,23 @@ const items = [
   },
   {
     name:'Productivity_And_Performance',
-    label:'Productivity And Performance'
+    label:'Productivity & Performance'
   },
   {
     name:'Not_Another_Hybrid',
     label:'Not Another Hybrid'
   },
   {
-    name:'Declarative_Components',
-    label:'Declarative Components'
-  },
-  {
     name:'Efficient_Rerender',
-    label:'Efficient Rerender'
+    label:'Efficient Rendering'
   },
   {
     name:'Native_Views',
     label:'Native Views'
+  },
+  {
+    name:'Declarative_Components',
+    label:'Declarative Components'
   },
   {
     name:'Reusable_Components',

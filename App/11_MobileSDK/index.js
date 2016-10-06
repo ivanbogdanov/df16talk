@@ -21,7 +21,10 @@ class Slide extends Component {
             with
           </Text>
           <Text style={styles.text}>
-            Mobile SDK
+            Salesforce Mobile
+          </Text>
+          <Text style={styles.text}>
+            SDK
           </Text>
           <SlideUpFadeIn style={styles.iconCont}>
               <Theme.Icons.Utility
@@ -58,11 +61,37 @@ class Slide extends Component {
 
         <View style={styles.container}>
           <Text style={styles.text}>
-            datacontainer
+            UI Components:
           </Text>
           <Text style={styles.text}>
-            theme
+            Buttons
           </Text>
+          <Text style={styles.text}>
+            Tiles
+          </Text>
+          <Text style={styles.text}>
+            Icons
+          </Text>
+          <Text style={styles.text}>
+            etc
+          </Text>
+
+        </View>
+
+        <View style={styles.container}>
+          <Text style={styles.text}>
+            Datacontainer Components:
+          </Text>
+          <Text style={styles.text}>
+            Sobject
+          </Text>
+          <Text style={styles.text}>
+            Query List
+          </Text>
+          <Text style={styles.text}>
+            Search List
+          </Text>
+
         </View>
 
         <View style={styles.container}>

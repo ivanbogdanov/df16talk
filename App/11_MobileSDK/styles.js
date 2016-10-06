@@ -8,13 +8,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#7f93f9',
+    backgroundColor: '#1589ee',
   },
   text: {
     fontSize: 40,
     textAlign: 'center',
     margin: 10,
-    fontFamily: 'SalesforceSans-Regular',
+    fontFamily: 'SalesforceSans-Light',
     color:'white'
   },
   iconCont:{

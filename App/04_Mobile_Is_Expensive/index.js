@@ -11,7 +11,7 @@ import Theme from 'react.force.base.theme';
 import { SwipePage } from '../Common';
 
 
-import { SlideUpFadeIn } from '../Animations';
+import { SlideDownFadeIn } from '../Animations';
 
 import styles from './styles';
 
@@ -30,14 +30,13 @@ class Slide extends Component {
             <Text style={styles.text}>
               is expensive
             </Text>
-            <SlideUpFadeIn>
-              <TouchableOpacity style={styles.iconContainer}>
-                <Theme.Icons.Utility
-                  iconColor='#ffffff'
-                  name='moneybag'
-                />
-              </TouchableOpacity>
-            </SlideUpFadeIn>
+            <SlideDownFadeIn delay={800} style={styles.iconContainer}>
+              <Theme.Icons.Utility
+                iconColor='#ffffff'
+                name='moneybag'
+                style={styles.icon}
+              />
+            </SlideDownFadeIn>
         </View>
         <View style={styles.container}>
           <Text style={styles.text}>
@@ -58,6 +57,11 @@ class Slide extends Component {
         <View style={styles.container}>
           <Text style={styles.text}>
             dedicated teams
+          </Text>
+        </View>
+        <View style={styles.container}>
+          <Text style={styles.text}>
+            productivity challenges
           </Text>
         </View>
       </SwipePage>

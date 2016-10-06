@@ -11,6 +11,8 @@ import Theme from 'react.force.base.theme';
 import { SlideUpFadeIn } from '../../Animations';
 import NextChapterButton from '../NextChapterButton';
 
+import routes from '../../routes';
+
 import styles from './styles';
 
 class SwipePage extends Component {
@@ -21,6 +23,20 @@ class SwipePage extends Component {
       displayNextButton: false,
       openPanelIndex: 0
     };
+  }
+
+  _getNextRoute(routeName) {
+    let index = routes.findIndex(route => route.name === routeName);
+    let nextIndex = index+1;
+    if(nextIndex >= routes.length){
+      nextIndex = 0;
+    }
+    return routes[nextIndex];
+  }
+
+  _getNextRouteLabel() {
+    let nextRoute = this._getNextRoute(this.props.route.name);
+    return nextRoute.preview?nextRoute.preview:nextRoute.label;
   }
 
   _handlePress() {
@@ -37,6 +53,7 @@ class SwipePage extends Component {
   }
 
   render() {
+    let nextLabel = this._getNextRouteLabel();
     return (
       <View style={styles.container}>
         <Swiper
@@ -49,7 +66,7 @@ class SwipePage extends Component {
           { this.props.children }
         </Swiper>
         <NextChapterButton
-          label={this.props.nextLabel}
+          label={nextLabel}
           show={this.state.displayNextButton}
           onPress={this._handlePress.bind(this)}/>
       </View>

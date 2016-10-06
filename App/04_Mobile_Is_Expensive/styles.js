@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     marginTop:50
+  },
+  icon: {
+    width:80,
+    height:80
   }
 });
 

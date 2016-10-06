@@ -59,27 +59,27 @@ class App extends Component {
   _renderScene(route, navigator)  {
     switch (route.name) {
       case 'Some_Native_Apps_Are_Great':
-        return <Some_Native_Apps_Are_Great nextLabel='...but' route={route} onNext={this._handleNext.bind(this)}/>
+        return <Some_Native_Apps_Are_Great route={route} onNext={this._handleNext.bind(this)}/>
       case 'Most_Native_Apps_Suck':
-        return <Most_Native_Apps_Suck nextLabel='...mobile is expensive' route={route} onNext={this._handleNext.bind(this)}/>
+        return <Most_Native_Apps_Suck route={route} onNext={this._handleNext.bind(this)}/>
       case 'Mobile_Is_Expensive':
         return <Mobile_Is_Expensive route={route} onNext={this._handleNext.bind(this)} />
       case 'Productivity_And_Performance':
         return <Productivity_And_Performance route={route} onNext={this._handleNext.bind(this)}/>
       case 'Not_Another_Hybrid':
         return <Not_Another_Hybrid route={route} onNext={this._handleNext.bind(this)}/>
-      case 'Declarative_Components':
-        return <Declarative_Components route={route} onNext={this._handleNext.bind(this)}/>
       case 'Efficient_Rerender':
         return <Efficient_Rerender route={route} onNext={this._handleNext.bind(this)}/>
       case 'Native_Views':
         return <Native_Views route={route} onNext={this._handleNext.bind(this)}/>
+      case 'Declarative_Components':
+        return <Declarative_Components route={route} onNext={this._handleNext.bind(this)}/>
       case 'Reusable_Components':
         return <Reusable_Components route={route} onNext={this._handleNext.bind(this)}/>
       case 'MobileSDK':
         return <MobileSDK route={route} onNext={this._handleNext.bind(this)}/>
       default:
-        return <Why_React_Native nextLabel='Native is ...' route={route} onNext={this._handleNext.bind(this)}/>
+        return <Why_React_Native route={route} onNext={this._handleNext.bind(this)}/>
     }
   }
 
