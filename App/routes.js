@@ -37,6 +37,14 @@ const items = [
     label:'Declarative Components'
   },
   {
+    name:'Styles',
+    label:'Styles'
+  },
+  {
+    name:'Layouts',
+    label:'Layouts'
+  },
+  {
     name:'Reusable_Components',
     label:'Reusable Components'
   },

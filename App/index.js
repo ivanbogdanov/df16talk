@@ -10,11 +10,13 @@ import Most_Native_Apps_Suck from './03_Most_Native_Apps_Suck';
 import Mobile_Is_Expensive from './04_Mobile_Is_Expensive';
 import Productivity_And_Performance from './05_Productivity_And_Performance';
 import Not_Another_Hybrid from './06_Not_Another_Hybrid';
-import Declarative_Components from './07_Declarative_Components';
-import Efficient_Rerender from './08_Efficient_Rerender';
-import Native_Views from './09_Native_Views';
-import Reusable_Components from './10_Reusable_Components';
-import MobileSDK from './11_MobileSDK';
+import Efficient_Rerender from './07_Efficient_Rerender';
+import Native_Views from './08_Native_Views';
+import Declarative_Components from './09_Declarative_Components';
+import Styles from './10_Styles';
+import Layouts from './11_Layouts';
+import Reusable_Components from './12_Reusable_Components';
+import MobileSDK from './14_MobileSDK';
 
 import { NavigationBarMapper } from './NavBar';
 
@@ -31,7 +33,7 @@ class App extends Component {
 
   _handleMenuPress(routeName, nextRouteName) {
     this.setState({isOpen:false});
-    this.refs.nav.push({name:routeName, next:nextRouteName})
+    this.refs.nav.replace({name:routeName, next:nextRouteName})
   }
 
   _getNextRoute(routeName) {
@@ -44,11 +46,7 @@ class App extends Component {
   }
 
   _handleNext(route) {
-    console.log('_handleNext: ',route);
-    this.setState({isOpen:false});
     let nextRoute = (route && route.name)?this._getNextRoute(route.name):routes[0];
-    console.log('nextRoute: ',nextRoute);
-
     this.refs.nav.replace(nextRoute);
   }
 
@@ -59,27 +57,31 @@ class App extends Component {
   _renderScene(route, navigator)  {
     switch (route.name) {
       case 'Some_Native_Apps_Are_Great':
-        return <Some_Native_Apps_Are_Great route={route} onNext={this._handleNext.bind(this)}/>
+        return <Some_Native_Apps_Are_Great route={route} onNext={this._handleNext.bind(this)} />
       case 'Most_Native_Apps_Suck':
-        return <Most_Native_Apps_Suck route={route} onNext={this._handleNext.bind(this)}/>
+        return <Most_Native_Apps_Suck route={route} onNext={this._handleNext.bind(this)} />
       case 'Mobile_Is_Expensive':
         return <Mobile_Is_Expensive route={route} onNext={this._handleNext.bind(this)} />
       case 'Productivity_And_Performance':
-        return <Productivity_And_Performance route={route} onNext={this._handleNext.bind(this)}/>
+        return <Productivity_And_Performance route={route} onNext={this._handleNext.bind(this)} />
       case 'Not_Another_Hybrid':
-        return <Not_Another_Hybrid route={route} onNext={this._handleNext.bind(this)}/>
+        return <Not_Another_Hybrid route={route} onNext={this._handleNext.bind(this)} />
       case 'Efficient_Rerender':
-        return <Efficient_Rerender route={route} onNext={this._handleNext.bind(this)}/>
+        return <Efficient_Rerender route={route} onNext={this._handleNext.bind(this)} />
       case 'Native_Views':
-        return <Native_Views route={route} onNext={this._handleNext.bind(this)}/>
+        return <Native_Views route={route} onNext={this._handleNext.bind(this)} />
       case 'Declarative_Components':
-        return <Declarative_Components route={route} onNext={this._handleNext.bind(this)}/>
+        return <Declarative_Components route={route} onNext={this._handleNext.bind(this)} />
+      case 'Styles':
+        return <Styles route={route} onNext={this._handleNext.bind(this)} />
+      case 'Layouts':
+        return <Layouts route={route} onNext={this._handleNext.bind(this)} />
       case 'Reusable_Components':
-        return <Reusable_Components route={route} onNext={this._handleNext.bind(this)}/>
+        return <Reusable_Components route={route} onNext={this._handleNext.bind(this)} />
       case 'MobileSDK':
-        return <MobileSDK route={route} onNext={this._handleNext.bind(this)}/>
+        return <MobileSDK route={route} onNext={this._handleNext.bind(this)} />
       default:
-        return <Why_React_Native route={route} onNext={this._handleNext.bind(this)}/>
+        return <Why_React_Native route={route} onNext={this._handleNext.bind(this)} />
     }
   }
 

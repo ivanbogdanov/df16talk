@@ -16,7 +16,7 @@ class Slide extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <NextChapterButton label={this.props.nextLabel} delay={1200} onPress={this._handlePress.bind(this)} />
+        <NextChapterButton label='Native' delay={1200} onPress={this._handlePress.bind(this)} />
         <SlideUpFadeIn delay={500} style={styles.infoContainer}>
           <Text style={styles.welcome}>
             Why React Native?

@@ -37,6 +37,9 @@ class Slide extends Component {
 
         <View style={styles.container}>
           <Text style={styles.text}>
+            APIs:
+          </Text>
+          <Text style={styles.text}>
             oauth
           </Text>
           <Text style={styles.text}>
@@ -51,6 +54,9 @@ class Slide extends Component {
         </View>
 
         <View style={styles.container}>
+          <Text style={styles.text}>
+            CLI:
+          </Text>
           <Text style={styles.text}>
             forceios
           </Text>
@@ -80,7 +86,7 @@ class Slide extends Component {
 
         <View style={styles.container}>
           <Text style={styles.text}>
-            Datacontainer Components:
+            Data Components:
           </Text>
           <Text style={styles.text}>
             Sobject

@@ -49,6 +49,9 @@ class SwipePage extends Component {
     if(this.state.openPanelIndex > context.state.index){
       this.setState({displayNextButton:true});
     }
+    else{
+      this.setState({displayNextButton:false});
+    }
     this.setState({openPanelIndex:context.state.index});
   }
 
