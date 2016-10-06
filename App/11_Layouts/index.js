@@ -6,6 +6,8 @@ import { SlideUpFadeIn } from '../Animations';
 
 import codeSampleFlexbox from './codeSampleFlexbox';
 
+import FlexboxPlayground from './FlexboxPlayground';
+
 import styles from './styles';
 
 class Slide extends Component {
@@ -36,6 +38,9 @@ class Slide extends Component {
           <View style={styles.codeContainer}>
             { this._renderSampleFlexbox() }
           </View>
+        </View>
+        <View style={[styles.container, {backgroundColor:'white'}]}>
+          <FlexboxPlayground />
         </View>
       </SwipePage>
     );
