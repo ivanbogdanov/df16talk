@@ -37,7 +37,7 @@ class Slide extends Component {
         </View>
         <View style={styles.container}>
           <Text style={[styles.text]}>
-            No WebView
+            Not inside WebView
           </Text>
         </View>
         <View style={styles.container}>

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     fontSize: 46,
     textAlign: 'center',
     margin: 10,
-    fontFamily: 'SalesforceSans-Regular',
+    fontFamily: 'SalesforceSans-Light',
     color:'white'
   },
   textAnd: {

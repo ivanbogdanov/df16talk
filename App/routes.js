@@ -22,14 +22,14 @@ const items = [
   },
   {
     name:'Productivity_And_Performance',
-    label:'Productivity & Native Performance',
+    label:'Productivity & Performance',
     icon:{type:'Custom',name:'custom80'}
-
   },
   {
     name:'Not_Another_Hybrid',
     label:'Not Another Hybrid',
-    icon:{type:'Custom',name:'custom34'}
+    icon:{type:'Custom',name:'custom34'},
+    lightScheme:true
   },
   {
     name:'Efficient_Rerender',

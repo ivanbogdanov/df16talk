@@ -27,7 +27,7 @@ class SwipePage extends Component {
   }
 
   componentDidMount() {
-    if(this.props.lightScheme){
+    if(this.props.route && this.props.route.lightScheme){
       StatusBar.setBarStyle('default', true);
     }
     else{
@@ -67,11 +67,14 @@ class SwipePage extends Component {
 
   render() {
     let nextLabel = this._getNextRouteLabel();
+    'rgba(255,255,255,.3)'
+    const activeDotColor = this.props.route.lightScheme?'#777':'#fff';
+    const dotColor = this.props.route.lightScheme?'rgba(155,155,155,.3)':'rgba(255,255,255,.3)';
     return (
       <View style={styles.container}>
         <Swiper
-          dot={<View style={{backgroundColor:'rgba(255,255,255,.3)', width: 13, height: 13,borderRadius: 7, marginLeft: 7, marginRight: 7,}} />}
-          activeDot={<View style={{backgroundColor: '#fff', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
+          dot={<View style={{backgroundColor:dotColor, width: 12, height: 12,borderRadius: 6, marginLeft: 7, marginRight: 7,}} />}
+          activeDot={<View style={{backgroundColor: activeDotColor, width: 12, height: 12, borderRadius: 6, marginLeft: 7, marginRight: 7}} />}
           paginationStyle={{ bottom: 80 }}
           loop={false}
           onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
@@ -89,7 +92,7 @@ class SwipePage extends Component {
 }
 
 SwipePage.defaultProps = {
-  lightScheme: false
+  route: {}
 };
 
 export default SwipePage

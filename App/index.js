@@ -36,9 +36,14 @@ class App extends Component {
    StatusBar.setBarStyle('light-content', true);
   }
 
-  _handleMenuPress(routeName, nextRouteName) {
+  _handleMenuPress(routeName) {
     this.setState({isOpen:false});
-    this.refs.nav.replace({name:routeName, next:nextRouteName})
+    const route = this._getRoute(routeName);
+    this.refs.nav.replace(route)
+  }
+
+  _getRoute(routeName) {
+    return routes.find(route => route.name === routeName);
   }
 
   _getNextRoute(routeName) {

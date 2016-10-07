@@ -33,7 +33,7 @@ class Slide extends Component {
             </Text>
           </View>
           <Text style={styles.text}>
-            Productivity
+            React Productivity
           </Text>
           <Text style={styles.textAnd}>
             &

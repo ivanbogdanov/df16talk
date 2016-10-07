@@ -12,12 +12,13 @@ import styles from './styles';
 module.exports = (config) => ({
 
   LeftButton: (route, navigator, index, navState) => {
+    const iconColor = route.lightScheme?'#777777':'#ffffff';
     return  (
-      <TouchableOpacity onPress={config.onMenuOpen}>
+      <TouchableOpacity onPress={config.onMenuOpen} key={route.name}>
         <Theme.Icons.Utility
           name="rows"
           style={styles.menuNavIcon}
-          iconColor='#ffffff' />
+          iconColor={iconColor} />
       </TouchableOpacity>
     )
   },
