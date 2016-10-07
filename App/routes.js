@@ -59,10 +59,14 @@ const items = [
 
   },
   {
+    name:'Tools',
+    label:'Tools',
+    icon:{type:'Utility',name:'custom_apps'}
+  },
+  {
     name:'Reusable_Components',
     label:'Reusable Components',
     icon:{type:'Utility',name:'puzzle'}
-
   },
   {
     name:'MobileSDK',

@@ -15,9 +15,10 @@ import Native_Views from './08_Native_Views';
 import Declarative_Components from './09_Declarative_Components';
 import Styles from './10_Styles';
 import Layouts from './11_Layouts';
-import Reusable_Components from './12_Reusable_Components';
-import MobileSDK from './14_MobileSDK';
-import SampleApps from './15_SampleApps';
+import Tools from './12_Tools';
+import Reusable_Components from './14_Reusable_Components';
+import MobileSDK from './15_MobileSDK';
+import SampleApps from './16_SampleApps';
 
 import { NavigationBarMapper } from './NavBar';
 
@@ -86,6 +87,8 @@ class App extends Component {
         return <Styles route={route} onNext={this._handleNext.bind(this)} />
       case 'Layouts':
         return <Layouts route={route} onNext={this._handleNext.bind(this)} />
+      case 'Tools':
+        return <Tools route={route} onNext={this._handleNext.bind(this)} />
       case 'Reusable_Components':
         return <Reusable_Components route={route} onNext={this._handleNext.bind(this)} />
       case 'MobileSDK':
