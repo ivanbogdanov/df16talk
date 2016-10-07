@@ -59,7 +59,7 @@ class Slide extends Component {
       </View>
       <View style={styles.container}>
         <Text style={styles.text}>Many devs</Text>
-        <Text style={styles.text}>are affraid of</Text>
+        <Text style={styles.text}>are afraid of</Text>
         <Text style={styles.text}>making mistakes</Text>
         <Text style={styles.text}>and</Text>
         <Text style={styles.text}>build</Text>
