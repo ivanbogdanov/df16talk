@@ -42,6 +42,8 @@ class Slide extends Component {
         <View style={[styles.container, {backgroundColor:'white'}]}>
           <FlexboxPlayground />
         </View>
+        <View style={styles.container}>
+        </View>
       </SwipePage>
     );
   }

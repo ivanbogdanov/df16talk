@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#7f93f9',
+    backgroundColor: '#1589ee',
   },
   text: {
-    fontSize: 50,
+    fontSize: 40,
     textAlign: 'center',
     margin: 10,
     fontFamily: 'SalesforceSans-Light',
@@ -23,24 +23,7 @@ const styles = StyleSheet.create({
   icon:{
     width:80,
     height:80
-  },
-  code: {
-    fontSize: 20,
-    textAlign: 'left',
-    fontFamily: 'SalesforceSans-Regular',
-    color:'white'
-  },
-  codeContainer: {
-    marginTop:30
-  },
-  codeText: {
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 10,
-    marginBottom:30,
-    fontFamily: 'SalesforceSans-Regular',
-    color:'white'
-  },
+  }
 });
 
 export default styles;

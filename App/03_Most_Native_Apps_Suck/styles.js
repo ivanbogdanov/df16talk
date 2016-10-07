@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#9faab5',
+    backgroundColor: '#7e8c99',
   },
   text: {
     fontSize: 40,

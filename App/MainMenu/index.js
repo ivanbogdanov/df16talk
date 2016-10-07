@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  TouchableOpacity
-} from 'react-native';
+import { ScrollView } from 'react-native';
 
 import Theme from 'react.force.base.theme';
 
@@ -29,16 +25,16 @@ class MainMenu extends Component {
             onPress={this._handleMenuItemPress.bind(this)}
             name={item.name}
             label={item.label}
-            next={item.next} />
+            icon={item.icon} />
         );
       });
   }
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         { this._renderMenuItems() }
-      </View>
+      </ScrollView>
     );
   }
 }

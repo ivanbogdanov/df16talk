@@ -64,7 +64,7 @@ class SlideUpFadeIn extends Component {
  };
 
 SlideUpFadeIn.defaultProps = {
-  delay: 200
+  delay: 300
 };
 
 export default SlideUpFadeIn

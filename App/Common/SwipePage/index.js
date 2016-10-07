@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  StatusBar
 } from 'react-native';
 
 import Swiper from 'react-native-swiper';
@@ -23,6 +24,15 @@ class SwipePage extends Component {
       displayNextButton: false,
       openPanelIndex: 0
     };
+  }
+
+  componentDidMount() {
+    if(this.props.lightScheme){
+      StatusBar.setBarStyle('default', true);
+    }
+    else{
+      StatusBar.setBarStyle('light-content', true);
+    }
   }
 
   _getNextRoute(routeName) {
@@ -46,7 +56,7 @@ class SwipePage extends Component {
   }
 
   _onMomentumScrollEnd (e, state, context) {
-    if(this.state.openPanelIndex > context.state.index){
+    if(state.index + 1 >= state.total ){
       this.setState({displayNextButton:true});
     }
     else{
@@ -63,7 +73,7 @@ class SwipePage extends Component {
           dot={<View style={{backgroundColor:'rgba(255,255,255,.3)', width: 13, height: 13,borderRadius: 7, marginLeft: 7, marginRight: 7,}} />}
           activeDot={<View style={{backgroundColor: '#fff', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
           paginationStyle={{ bottom: 80 }}
-          loop={true}
+          loop={false}
           onMomentumScrollEnd ={this._onMomentumScrollEnd.bind(this)}
           >
           { this.props.children }
@@ -71,10 +81,15 @@ class SwipePage extends Component {
         <NextChapterButton
           label={nextLabel}
           show={this.state.displayNextButton}
+          delay={500}
           onPress={this._handlePress.bind(this)}/>
       </View>
     );
   }
 }
+
+SwipePage.defaultProps = {
+  lightScheme: false
+};
 
 export default SwipePage

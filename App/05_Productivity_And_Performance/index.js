@@ -39,7 +39,7 @@ class Slide extends Component {
             &
           </Text>
           <Text style={styles.text}>
-            Performance
+            Native Performance
           </Text>
           <SlideRightFadeIn style={styles.iconCont}>
               <Theme.Icons.Custom

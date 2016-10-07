@@ -7,8 +7,6 @@ import {
 
 import Theme from 'react.force.base.theme';
 
-import NextChapterButton from './NextChapterButton';
-
 import styles from './styles';
 
 module.exports = (config) => ({

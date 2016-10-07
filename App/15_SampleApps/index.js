@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-
-import { Text, View } from 'react-native';
-
-import Theme from 'react.force.base.theme';
-
+import { Text, View, Modal } from 'react-native';
 import { SwipePage } from '../Common';
+import Theme from 'react.force.base.theme';
 
 import { SlideUpFadeIn } from '../Animations';
 
@@ -14,52 +11,42 @@ class Slide extends Component {
 
   render() {
     return (
-      <SwipePage route={this.props.route} onNext={this.props.onNext} nextLabel={this.props.nextLabel} lightScheme={true}>
+      <SwipePage route={this.props.route} onNext={this.props.onNext} nextLabel={this.props.nextLabel}>
+
         <View style={styles.container}>
           <Text style={styles.text}>
-            React Native
+            Salesforce
           </Text>
           <Text style={styles.text}>
-            Is Not Another
+            Mobile SDK
           </Text>
           <Text style={styles.text}>
-            Hybrid
-          </Text>
-          <Text style={styles.text}>
-            Framework
+            Sample Apps
           </Text>
           <SlideUpFadeIn style={styles.iconCont}>
-              <Theme.Icons.Custom
-                name="custom34"
+              <Theme.Icons.Utility
+                name='setup_assistant_guide'
+                iconColor='#ffffff'
                 style={styles.icon}
               />
           </SlideUpFadeIn>
         </View>
-        <View style={styles.container}>
-          <Text style={[styles.text]}>
-            No WebView
-          </Text>
-        </View>
+
         <View style={styles.container}>
           <Text style={styles.text}>
-            Javascript Thread
+            SmartSyncExplorer
+          </Text>
+          <Text style={styles.text}>
+            ReactNative
           </Text>
         </View>
+
         <View style={styles.container}>
           <Text style={styles.text}>
-            Multiple Native Threads
+            Dreamhouse App
           </Text>
         </View>
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            Async rendering
-          </Text>
-        </View>
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            Native Views
-          </Text>
-        </View>
+
       </SwipePage>
     );
   }

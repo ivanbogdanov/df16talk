@@ -64,7 +64,7 @@ class SlideRightFadeIn extends Component {
  };
 
 SlideRightFadeIn.defaultProps = {
-  delay: 200
+  delay: 300
 };
 
 export default SlideRightFadeIn

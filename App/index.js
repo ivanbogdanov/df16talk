@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigator } from 'react-native';
+import { Navigator, StatusBar } from 'react-native';
 import SideMenu from 'react-native-side-menu';
 
 import MainMenu from './MainMenu';
@@ -17,6 +17,7 @@ import Styles from './10_Styles';
 import Layouts from './11_Layouts';
 import Reusable_Components from './12_Reusable_Components';
 import MobileSDK from './14_MobileSDK';
+import SampleApps from './15_SampleApps';
 
 import { NavigationBarMapper } from './NavBar';
 
@@ -29,6 +30,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {isOpen: false};
+  }
+
+  componentDidMount() {
+   StatusBar.setBarStyle('light-content', true);
   }
 
   _handleMenuPress(routeName, nextRouteName) {
@@ -80,6 +85,8 @@ class App extends Component {
         return <Reusable_Components route={route} onNext={this._handleNext.bind(this)} />
       case 'MobileSDK':
         return <MobileSDK route={route} onNext={this._handleNext.bind(this)} />
+      case 'SampleApps':
+        return <SampleApps route={route} onNext={this._handleNext.bind(this)} />
       default:
         return <Why_React_Native route={route} onNext={this._handleNext.bind(this)} />
     }

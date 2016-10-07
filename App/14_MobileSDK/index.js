@@ -97,17 +97,8 @@ class Slide extends Component {
           <Text style={styles.text}>
             Search List
           </Text>
-
         </View>
 
-        <View style={styles.container}>
-          <Text style={styles.text}>
-            Dreamhouse
-          </Text>
-          <Text style={styles.text}>
-            App
-          </Text>
-        </View>
 
       </SwipePage>
     );

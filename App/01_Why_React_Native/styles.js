@@ -19,6 +19,20 @@ const styles = StyleSheet.create({
     flex:0,
     justifyContent: 'center',
     alignItems: 'flex-end'
+  },
+  iconContainer:{
+    width:82,
+    height:82,
+    marginTop:60,
+    backgroundColor:'white',
+    padding:5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius:8
+  },
+  icon:{
+    width:70,
+    height:70
   }
 });
 

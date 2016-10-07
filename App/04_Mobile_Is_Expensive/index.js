@@ -61,7 +61,13 @@ class Slide extends Component {
         </View>
         <View style={styles.container}>
           <Text style={styles.text}>
-            productivity challenges
+            slower
+          </Text>
+          <Text style={styles.text}>
+            than
+          </Text>
+          <Text style={styles.text}>
+            web development
           </Text>
         </View>
       </SwipePage>
