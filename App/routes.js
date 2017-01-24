@@ -77,6 +77,11 @@ const items = [
     name:'SampleApps',
     label:'MobileSDK Sample Apps',
     icon:{type:'Utility',name:'setup_assistant_guide'}
+  },
+  {
+    name:'Challenges',
+    label:'Challenges',
+    icon:{type:'Utility',name:'trail'}
   }
 ];
 

@@ -19,6 +19,7 @@ import Tools from './12_Tools';
 import Reusable_Components from './14_Reusable_Components';
 import MobileSDK from './15_MobileSDK';
 import SampleApps from './16_SampleApps';
+import Challenges from './17_Challenges';
 
 import { NavigationBarMapper } from './NavBar';
 
@@ -95,6 +96,9 @@ class App extends Component {
         return <MobileSDK route={route} onNext={this._handleNext.bind(this)} />
       case 'SampleApps':
         return <SampleApps route={route} onNext={this._handleNext.bind(this)} />
+      case 'Challenges':
+        return <Challenges route={route} onNext={this._handleNext.bind(this)} />
+
       default:
         return <Why_React_Native route={route} onNext={this._handleNext.bind(this)} />
     }
